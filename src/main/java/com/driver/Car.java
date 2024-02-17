@@ -18,7 +18,34 @@ public class Car extends Vehicle {
         this.isManual=isManual;
         this.type=type;
         this.seats=seats;
+        this.currentGear=1;
 
+    }
+
+    public Car(String name) {
+        super(name);
+    }
+    public int getWheels(){
+        return wheels;
+    }
+    public String getType(){
+        return type;
+    }
+    public int getDoors(){
+        return doors;
+    }
+    public int getGears(){
+        return gears;
+    }
+    public boolean isManual(){
+        return isManual;
+    }
+    public int getCurrentGear(){
+        return currentGear;
+    }
+
+    public int getSeats() {
+        return seats;
     }
 
     public void changeGear(int newGear){
@@ -27,8 +54,7 @@ public class Car extends Vehicle {
     }
 
     public void changeSpeed(int newSpeed, int newDirection){
-        currentSpeed = newSpeed;
-        currentDirection=newDirection;
+        super.move(newSpeed,newDirection);
         System.out.println("changeSpeed method called - The speed is changed to: " + newSpeed + ", and the direction is changed to: " + newDirection + " degrees");
     }
 }
